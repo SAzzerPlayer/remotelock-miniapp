@@ -6,9 +6,10 @@ import {
 import { Routes } from "./Routes";
 import { TopTabBar } from "./TopTabBar";
 import { ColorTheme } from "../shared/ColorTheme";
+import { DevicesScreen } from "../screens/Devices";
+import { UsersScreen } from "../screens/Users";
 
 const Tab = createBottomTabNavigator();
-const Blank = () => null;
 
 export const TopTabNavigator = () => {
   const [screenTopOffset, setScreenTopOffset] = React.useState(0);
@@ -28,11 +29,15 @@ export const TopTabNavigator = () => {
         navigate={navigate}
         onLayout={({
           nativeEvent: {
-            layout: { height },
+            layout: { height, y },
           },
-        }) => setScreenTopOffset(height)}
+        }) => setScreenTopOffset(height + y)}
       />
     ),
+    []
+  );
+  const screenOptions = React.useMemo(
+    () => ({ headerShown: false, header: () => null }),
     []
   );
 
@@ -41,10 +46,10 @@ export const TopTabNavigator = () => {
       detachInactiveScreens
       tabBar={tabBar}
       sceneContainerStyle={sceneContainerStyle}
-      screenOptions={{ headerShown: false }}
+      screenOptions={screenOptions}
     >
-      <Tab.Screen name={Routes.Devices} component={Blank} />
-      <Tab.Screen name={Routes.Users} component={Blank} />
+      <Tab.Screen name={Routes.Devices} component={DevicesScreen} />
+      <Tab.Screen name={Routes.Users} component={UsersScreen} />
     </Tab.Navigator>
   );
 };

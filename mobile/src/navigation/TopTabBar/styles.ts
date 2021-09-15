@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     left: 0,
     right: 0,
     padding: CONTAINER_PADDING,
+    paddingBottom: 0,
     backgroundColor: ColorTheme["back-2"],
   },
   inner: {
@@ -26,6 +27,7 @@ export const styles = StyleSheet.create({
     backgroundColor: ColorTheme["back-3"],
     borderRadius: 8,
     padding: INNER_PADDING,
+    elevation: 4,
   },
   animatableBackground: {
     position: "absolute",
