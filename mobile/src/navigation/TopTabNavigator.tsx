@@ -43,7 +43,6 @@ export const TopTabNavigator = () => {
 
   return (
     <Tab.Navigator
-      detachInactiveScreens
       tabBar={tabBar}
       sceneContainerStyle={sceneContainerStyle}
       screenOptions={screenOptions}

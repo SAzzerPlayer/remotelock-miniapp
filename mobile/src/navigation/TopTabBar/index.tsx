@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { styles, MAX_TRANSLATE_X } from "./styles";
 import { TabRoutesArray } from "./options";
+import { SharedText } from "../../components/shared/Text";
 
 interface ITopTabBarProps {
   navigate: (route: string) => void;
@@ -70,7 +71,7 @@ export const TopTabBar: React.FC<ITopTabBarProps> = ({
             onPress={onTabPress(index)}
             style={styles.button}
           >
-            <Text>{title}</Text>
+            <SharedText category="h3">{title}</SharedText>
           </Pressable>
         ))}
       </View>
