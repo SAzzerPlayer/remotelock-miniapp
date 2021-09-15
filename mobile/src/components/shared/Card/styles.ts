@@ -26,5 +26,6 @@ export const styles = StyleSheet.create({
   },
   hintText: {
     color: ColorTheme["hint-1"],
+    marginTop: 2,
   },
 });

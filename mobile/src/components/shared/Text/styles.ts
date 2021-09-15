@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { ColorTheme } from "../../../shared/ColorTheme";
-import { ESharedTextCategory } from "./options";
+import { ESharedTextCategory, TSharedTextProp } from "./options";
 
 export const styles = StyleSheet.create({
   text: {
@@ -64,4 +64,12 @@ export const categoryStyles: Record<
     lineHeight: 14,
     ...fontWeights.light,
   },
+};
+
+export const getSharedTextStyle = (category: TSharedTextProp) => {
+  if (Object.keys(ESharedTextCategory).includes(category)) {
+    return StyleSheet.flatten([styles.text, categoryStyles[category]]);
+  }
+  console.error(`Setted invalid category for SharedText style = ${category}`);
+  return StyleSheet.flatten([styles.text, categoryStyles.s1]);
 };

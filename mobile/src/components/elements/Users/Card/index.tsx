@@ -31,9 +31,16 @@ export const UserCard = React.memo<IUserCardProps>(
       ? `${formatDate(period.start)} - ${formatDate(period.end)}`
       : undefined;
     return (
-      <Card title={name} hint={email}>
+      <Card
+        title={name}
+        hint={email}
+        avatarStyle={{
+          borderColor: UserCardStatusBackground[status],
+          borderWidth: 2,
+        }}
+      >
         {!!periodText && (
-          <SharedText category="h3" style={styles.periodText}>
+          <SharedText category="h3" style={styles.periodText} numberOfLines={2}>
             {periodText}
           </SharedText>
         )}
