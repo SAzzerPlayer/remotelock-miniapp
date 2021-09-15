@@ -9,7 +9,7 @@ export const SearchField: React.FC = () => {
       <TextInput
         value={value}
         onChangeText={setValue}
-        placeholder={"Search device name"}
+        placeholder={"Search by device name"}
         style={styles.input}
       />
     </View>
