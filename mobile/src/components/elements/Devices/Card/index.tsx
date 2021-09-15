@@ -1,8 +1,13 @@
 import React from "react";
 import { Card } from "../../../shared/Card";
-import { View, TouchableOpacity } from "react-native";
-import { SharedText } from "../../../shared/Text";
+import { View, Image } from "react-native";
 import { dequal } from "dequal";
+import { ColorTheme } from "../../../../shared/ColorTheme";
+import { styles } from "./styles";
+import { Button } from "../../../shared/Button";
+
+const lockedIconSource = require("../../../../assets/locked.png");
+const unlockedIconSource = require("../../../../assets/unlocked.png");
 
 interface IDeviceCardProps {
   name: string;
@@ -12,27 +17,33 @@ interface IDeviceCardProps {
 }
 
 export const DeviceCard = React.memo<IDeviceCardProps>(
-  ({ name, serial, locked, onChangeLock }) => {
-    return (
-      <Card title={name} hint={serial}>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            flex: 1,
-            alignItems: "flex-end",
-          }}
-        >
-          <TouchableOpacity
-            onPress={() => onChangeLock(!locked)}
-            style={{ width: 64, height: 32, backgroundColor: "gray" }}
-          />
-          <SharedText category="s1">
-            {locked ? "Locked" : "Unlocked"}
-          </SharedText>
-        </View>
-      </Card>
-    );
-  },
+  ({ name, serial, locked, onChangeLock }) => (
+    <Card
+      title={name}
+      hint={serial}
+      avatarStyle={[
+        styles.avatar,
+        {
+          borderColor: locked ? ColorTheme.green : ColorTheme.red,
+        },
+      ]}
+    >
+      <View style={styles.flexWrapper}>
+        <Image
+          source={locked ? lockedIconSource : unlockedIconSource}
+          style={[
+            styles.lockIcon,
+            {
+              tintColor: locked ? ColorTheme.green : ColorTheme.red,
+            },
+          ]}
+        />
+        <Button
+          title={locked ? "Unlock" : "Lock"}
+          onPress={() => onChangeLock(!locked)}
+        />
+      </View>
+    </Card>
+  ),
   dequal
 );

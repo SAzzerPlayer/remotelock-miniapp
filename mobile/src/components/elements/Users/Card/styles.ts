@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { ColorTheme } from "../../../../shared/ColorTheme";
 
 export const styles = StyleSheet.create({
   statusPosition: {
@@ -6,7 +7,9 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-end",
     alignItems: "flex-end",
+    marginBottom: -8,
   },
-  statusBadge: { padding: 12, borderRadius: 16, backgroundColor: "yellow" },
+  periodText: { color: ColorTheme["hint-2"], marginTop: 2 },
+  statusBadge: { padding: 12, borderRadius: 8 },
   status: { textTransform: "uppercase" },
 });

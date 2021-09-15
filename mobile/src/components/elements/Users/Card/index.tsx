@@ -4,15 +4,21 @@ import { View } from "react-native";
 import { SharedText } from "../../../shared/Text";
 import { dequal } from "dequal";
 import { styles } from "./styles";
+import {
+  EUserCardStatus,
+  UserCardStatusBackground,
+  UserCardStatusTitle,
+} from "./EUserCardStatus";
 import moment from "moment";
+import { ColorTheme } from "../../../../shared/ColorTheme";
 
 type TDateFormat = string | number;
-const formatDate = (date: TDateFormat) => moment(date).format();
+const formatDate = (date: TDateFormat) => moment(date).format("MMM Do YY");
 
 interface IUserCardProps {
   name: string;
   email: string;
-  status: string;
+  status: EUserCardStatus;
   period?: {
     start: TDateFormat;
     end: TDateFormat;
@@ -26,11 +32,20 @@ export const UserCard = React.memo<IUserCardProps>(
       : undefined;
     return (
       <Card title={name} hint={email}>
-        {!!periodText && <SharedText category="s1">{periodText}</SharedText>}
+        {!!periodText && (
+          <SharedText category="h3" style={styles.periodText}>
+            {periodText}
+          </SharedText>
+        )}
         <View style={styles.statusPosition}>
-          <View style={styles.statusBadge}>
-            <SharedText category="h2" style={styles.status}>
-              {status}
+          <View
+            style={[
+              styles.statusBadge,
+              { backgroundColor: UserCardStatusBackground[status] },
+            ]}
+          >
+            <SharedText category="h3" style={styles.status}>
+              {UserCardStatusTitle[status]}
             </SharedText>
           </View>
         </View>
