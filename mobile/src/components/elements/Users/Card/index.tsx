@@ -4,15 +4,12 @@ import { View } from "react-native";
 import { SharedText } from "../../../shared/Text";
 import { dequal } from "dequal";
 import { styles } from "./styles";
-import {
-  UserStatusBackground,
-  UserStatusTitle,
-} from "./options";
+import { UserStatusBackground, UserStatusTitle } from "./options";
 import moment from "moment";
 import { EUserStatus } from "../../../../shared/IUser";
 
 type TDateFormat = string | number;
-const formatDate = (date: TDateFormat) => moment(date).format("MMM Do YY");
+const formatDate = (date: TDateFormat) => moment(date).format("MMM DD hh:mm A");
 
 interface IUserCardProps {
   name: string;

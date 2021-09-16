@@ -13,6 +13,6 @@ export const styles = StyleSheet.create({
   statusBadge: { padding: 12, borderRadius: 8 },
   status: { textTransform: "uppercase" },
   avatar: {
-    borderWidth: 2,
+    borderWidth: 3,
   },
 });

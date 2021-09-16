@@ -14,6 +14,6 @@ export const styles = StyleSheet.create({
     marginRight: 8,
   },
   avatar: {
-    borderWidth: 2,
+    borderWidth: 3,
   },
 });
