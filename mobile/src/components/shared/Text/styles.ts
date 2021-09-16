@@ -66,5 +66,5 @@ export const getSharedTextStyle = (category: TSharedTextProp) => {
     return StyleSheet.flatten([styles.text, categoryStyles[category]]);
   }
   console.error(`Setted invalid category for SharedText style = ${category}`);
-  return StyleSheet.flatten([styles.text, categoryStyles.s1]);
+  return StyleSheet.flatten([styles.text, categoryStyles.p1]);
 };

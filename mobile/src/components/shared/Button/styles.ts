@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     ...shadowStyles.intense,
   },
   text: {
-    color: "white",
+    color: ColorTheme.white,
     textTransform: "capitalize",
   },
 });

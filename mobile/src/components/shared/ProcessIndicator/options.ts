@@ -4,7 +4,7 @@ import { EProcessState } from "@shared/EProcessState";
 export const ProcessMessage = {
   [EProcessState.Waiting]: "",
   [EProcessState.Loading]: "Loading...",
-  [EProcessState.Error]: "Something went wrong.",
+  [EProcessState.Error]: "Something went wrong",
   [EProcessState.EmptyResponse]: "Nothing found",
 };
 

@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    backgroundColor: "white",
+    backgroundColor: ColorTheme.white,
     paddingHorizontal: 16,
     paddingVertical: 24,
     ...shadowStyles.low

@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     backgroundColor: ColorTheme["back-2"],
     borderRadius: 8,
     padding: INNER_PADDING,
-    ...shadowStyles.regular
+    ...shadowStyles.regular,
   },
   animatableBackground: {
     position: "absolute",
@@ -37,12 +37,13 @@ export const styles = StyleSheet.create({
     backgroundColor: ColorTheme.white,
     width: TAB_WIDTH,
     borderRadius: 8,
-    elevation: 5,
+    ...shadowStyles.regular,
+    elevation: shadowStyles.regular.elevation + 1,
   },
   button: {
     flex: 1,
     alignItems: "center",
     padding: 8,
-    elevation: 6,
+    elevation: shadowStyles.regular.elevation + 2,
   },
 });
