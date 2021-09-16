@@ -17,7 +17,10 @@ export const UsersReducer = createReducer(initialState)
   .handleAction(UsersActions.loadUsersAsync.success, (state, action) => ({
     ...state,
     users: action.payload.data.data.map(extractFetchedUser),
-    processState: EProcessState.Waiting,
+    processState:
+      action.payload.data.data.length > 0
+        ? EProcessState.Waiting
+        : EProcessState.EmptyResponse,
   }))
   .handleAction(UsersActions.loadUsersAsync.failure, (state) => ({
     ...state,

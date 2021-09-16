@@ -21,7 +21,7 @@ export const ProcessIndicator: React.FC<IProcessIndicatorProps> = ({
   React.useEffect(() => {
     Animated.timing(opacity, {
       toValue: opacityValue,
-      duration: 100,
+      duration: 150,
       delay: isShown ? 200 : 0,
       useNativeDriver: true,
     }).start();

@@ -2,7 +2,6 @@ import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 import { IUser } from "../../../shared/IUser";
 import { useUsersSelector } from "../../../shared/selectors/useUsersSelector";
-import { EmptyResponseMessage } from "../../shared/EmptyResponseMessage";
 import { Spacer } from "../../shared/Spacer";
 import { UserCard } from "./Card";
 
@@ -43,7 +42,6 @@ export const UsersList: React.FC = () => {
       keyExtractor={keyExtractor}
       renderItem={renderItem}
       contentContainerStyle={styles.list}
-      ListEmptyComponent={EmptyResponseMessage}
     />
   );
 };

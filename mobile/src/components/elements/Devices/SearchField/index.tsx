@@ -11,7 +11,7 @@ export const SearchField: React.FC = () => {
   const timeoutRef = React.useRef<any>(null);
   React.useEffect(() => {
     timeoutRef.current = setTimeout(
-      () => dispatch(DevicesActions.setQuery(value)),
+      () => dispatch(DevicesActions.setQuery(value.trim())),
       400
     );
     return () => {

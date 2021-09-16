@@ -21,7 +21,10 @@ export const DevicesReducer = createReducer(initialState)
     return {
       ...state,
       devices: action.payload.data.data.map(extractFetchedDevice),
-      processState: EProcessState.Waiting,
+      processState:
+        action.payload.data.data.length > 0
+          ? EProcessState.Waiting
+          : EProcessState.EmptyResponse,
     };
   })
   .handleAction(DevicesActions.setQuery, (state, action) => ({
@@ -32,7 +35,6 @@ export const DevicesReducer = createReducer(initialState)
     return {
       ...state,
       processState: EProcessState.Error,
-      devices: [],
     };
   })
   .handleAction(DevicesActions.switchDeviceLock, (state, action) => {

@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { IDevice } from "../../../shared/IDevice";
 import { useDevicesSelector } from "../../../shared/selectors/useDevicesSelector";
 import { DevicesActions } from "../../../store/modules/Devices/Actions";
-import { EmptyResponseMessage } from "../../shared/EmptyResponseMessage";
 import { Spacer } from "../../shared/Spacer";
 import { DeviceCard } from "./Card";
 
@@ -45,7 +44,6 @@ export const DevicesList: React.FC = () => {
       keyExtractor={keyExtractor}
       renderItem={renderItem}
       contentContainerStyle={styles.list}
-      ListEmptyComponent={EmptyResponseMessage}
     />
   );
 };
