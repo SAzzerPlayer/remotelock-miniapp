@@ -29,6 +29,7 @@ export const DeviceCard = React.memo<IDeviceCardProps>(
       ]}
     >
       <View style={styles.flexWrapper}>
+        <View style={styles.content}>
         <Image
           source={locked ? lockedIconSource : unlockedIconSource}
           style={[
@@ -41,7 +42,7 @@ export const DeviceCard = React.memo<IDeviceCardProps>(
         <Button
           title={locked ? "Unlock" : "Lock"}
           onPress={() => onChangeLock(!locked)}
-        />
+        /></View>
       </View>
     </Card>
   ),
