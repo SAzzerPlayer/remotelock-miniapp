@@ -5,9 +5,9 @@ import { SharedText } from "../../../shared/Text";
 import { dequal } from "dequal";
 import { styles } from "./styles";
 import {
-  UserCardStatusBackground,
-  UserCardStatusTitle,
-} from "./EUserCardStatus";
+  UserStatusBackground,
+  UserStatusTitle,
+} from "./options";
 import moment from "moment";
 import { EUserStatus } from "../../../../shared/IUser";
 
@@ -33,12 +33,12 @@ export const UserCard = React.memo<IUserCardProps>(
     const avatarStyle = [
       styles.avatar,
       {
-        borderColor: UserCardStatusBackground[status],
+        borderColor: UserStatusBackground[status],
       },
     ];
     const statusBadgeStyle = [
       styles.statusBadge,
-      { backgroundColor: UserCardStatusBackground[status] },
+      { backgroundColor: UserStatusBackground[status] },
     ];
 
     return (
@@ -51,7 +51,7 @@ export const UserCard = React.memo<IUserCardProps>(
         <View style={styles.statusPosition}>
           <View style={statusBadgeStyle}>
             <SharedText category="h3" style={styles.status}>
-              {UserCardStatusTitle[status]}
+              {UserStatusTitle[status]}
             </SharedText>
           </View>
         </View>

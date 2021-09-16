@@ -7,21 +7,21 @@ import { IDevicesState } from "./IDevicesState";
 const initialState: IDevicesState = {
   devices: [],
   query: "",
-  process: EProcessState.Waiting,
+  processState: EProcessState.Waiting,
 };
 
 export const DevicesReducer = createReducer(initialState)
   .handleAction(DevicesActions.searchDevicesAsync.request, (state) => {
     return {
       ...state,
-      process: EProcessState.Loading,
+      processState: EProcessState.Loading,
     };
   })
   .handleAction(DevicesActions.searchDevicesAsync.success, (state, action) => {
     return {
       ...state,
       devices: action.payload.data.data.map(extractFetchedDevice),
-      process: EProcessState.Waiting,
+      processState: EProcessState.Waiting,
     };
   })
   .handleAction(DevicesActions.setQuery, (state, action) => ({
@@ -31,7 +31,7 @@ export const DevicesReducer = createReducer(initialState)
   .handleAction(DevicesActions.searchDevicesAsync.failure, (state) => {
     return {
       ...state,
-      process: EProcessState.Error,
+      processState: EProcessState.Error,
       devices: [],
     };
   })

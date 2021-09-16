@@ -4,12 +4,10 @@ import { Provider as ReduxProvider } from "react-redux";
 import { store } from "./store";
 import { TopTabNavigator } from "./navigation/TopTabNavigator";
 
-export const App: React.FC = () => {
-  return (
-    <ReduxProvider store={store}>
-      <NavigationContainer>
-        <TopTabNavigator />
-      </NavigationContainer>
-    </ReduxProvider>
-  );
-};
+export const App: React.FC = () => (
+  <ReduxProvider store={store}>
+    <NavigationContainer>
+      <TopTabNavigator />
+    </NavigationContainer>
+  </ReduxProvider>
+);
