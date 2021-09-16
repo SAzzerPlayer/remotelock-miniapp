@@ -1,3 +1,7 @@
+import { EProcessState } from "../../../shared/EProcessState";
+import { IUser } from "../../../shared/IUser";
+
 export interface IUsersState {
-  users: any[];
+  users: IUser[];
+  processState: EProcessState;
 }

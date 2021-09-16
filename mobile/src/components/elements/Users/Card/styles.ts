@@ -12,4 +12,7 @@ export const styles = StyleSheet.create({
   periodText: { color: ColorTheme["hint-2"], marginTop: 4 },
   statusBadge: { padding: 12, borderRadius: 8 },
   status: { textTransform: "uppercase" },
+  avatar: {
+    borderWidth: 2,
+  },
 });

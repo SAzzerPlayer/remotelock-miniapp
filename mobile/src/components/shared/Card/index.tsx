@@ -5,7 +5,7 @@ import { styles } from "./styles";
 
 interface ICardProps {
   title: string;
-  hint: string;
+  hint?: string;
   imgSource?: ImageRequireSource;
   avatarStyle?: Record<string, any>;
 }
@@ -27,9 +27,11 @@ export const Card: React.FC<ICardProps> = ({
       <SharedText category="h1" numberOfLines={3}>
         {title}
       </SharedText>
-      <SharedText category="p1" style={styles.hintText} numberOfLines={2}>
-        {hint}
-      </SharedText>
+      {!!hint && (
+        <SharedText category="p1" style={styles.hintText} numberOfLines={2}>
+          {hint}
+        </SharedText>
+      )}
       {children}
     </View>
   </View>

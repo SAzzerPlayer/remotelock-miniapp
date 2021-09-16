@@ -3,4 +3,4 @@ import { IState } from "../../store/IState";
 
 const selector = (state: IState) => state.DevicesReducer;
 
-export const useDevicesSelector = useSelector(selector);
+export const useDevicesSelector = () => useSelector(selector);

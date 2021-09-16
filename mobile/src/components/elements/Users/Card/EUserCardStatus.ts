@@ -1,19 +1,14 @@
 import { ColorTheme } from "../../../../shared/ColorTheme";
+import { EUserStatus } from "../../../../shared/IUser";
 
-export enum EUserCardStatus {
-  Unavailable = 0,
-  Current = 1,
-  Upcoming = 2,
-}
-
-export const UserCardStatusTitle: Record<EUserCardStatus, string> = {
-  [EUserCardStatus.Unavailable]: "Unavailable",
-  [EUserCardStatus.Current]: "Active",
-  [EUserCardStatus.Upcoming]: "Upcoming",
+export const UserCardStatusTitle: Record<EUserStatus, string> = {
+  [EUserStatus.Unavailable]: "Unavailable",
+  [EUserStatus.Current]: "Active",
+  [EUserStatus.Upcoming]: "Upcoming",
 };
 
-export const UserCardStatusBackground: Record<EUserCardStatus, string> = {
-  [EUserCardStatus.Unavailable]: ColorTheme["back-1"],
-  [EUserCardStatus.Current]: ColorTheme["green"],
-  [EUserCardStatus.Upcoming]: ColorTheme["yellow"],
+export const UserCardStatusBackground: Record<EUserStatus, string> = {
+  [EUserStatus.Unavailable]: ColorTheme["back-1"],
+  [EUserStatus.Current]: ColorTheme["green"],
+  [EUserStatus.Upcoming]: ColorTheme["yellow"],
 };

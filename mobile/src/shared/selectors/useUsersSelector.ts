@@ -3,4 +3,4 @@ import { IState } from "../../store/IState";
 
 const selector = (state: IState) => state.UsersReducer;
 
-export const useUsersSelector = useSelector(selector);
+export const useUsersSelector = () => useSelector(selector);
