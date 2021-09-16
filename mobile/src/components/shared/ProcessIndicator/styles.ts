@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     height: "100%",
+    minWidth: 32,
     marginLeft: 16,
   },
   reloadText: { color: ColorTheme.yellow },

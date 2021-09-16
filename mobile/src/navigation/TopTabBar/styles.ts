@@ -1,6 +1,7 @@
 import { StyleSheet, Dimensions } from "react-native";
 import { ColorTheme } from "@shared/ColorTheme";
 import { TabRoutesArray } from "./options";
+import { shadowStyles } from "@shared/style/shadow";
 
 const { width } = Dimensions.get("screen");
 const CONTAINER_PADDING = 16;
@@ -27,7 +28,7 @@ export const styles = StyleSheet.create({
     backgroundColor: ColorTheme["back-3"],
     borderRadius: 8,
     padding: INNER_PADDING,
-    elevation: 4,
+    ...shadowStyles.regular
   },
   animatableBackground: {
     position: "absolute",

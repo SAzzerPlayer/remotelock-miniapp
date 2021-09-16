@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet , Platform} from "react-native";
 import { ColorTheme } from "@shared/ColorTheme";
 import { ESharedTextCategory, TSharedTextProp } from "./options";
 
@@ -11,16 +11,16 @@ export const styles = StyleSheet.create({
 
 const fontWeights = {
   bold: {
-    fontFamily: "sans-serif-medium",
-    fontWeight: "900",
+    fontFamily: Platform.OS === 'android' ? "sans-serif-medium" : undefined,
+    fontWeight: "700",
   },
   regular: {
-    fontWeight: "600",
-    fontFamily: "sans-serif",
+    fontFamily: Platform.OS === 'android' ? "sans-serif" : undefined,
+    fontWeight: "500",
   },
   light: {
-    fontFamily: "sans-serif-light",
-    fontWeight: "400",
+    fontFamily: Platform.OS === 'android' ? "sans-serif-light" : undefined,
+    fontWeight: "300",
   },
 };
 
@@ -55,13 +55,8 @@ export const categoryStyles: Record<
     ...fontWeights.regular,
   },
   [ESharedTextCategory.p1]: {
-    fontSize: 14,
-    lineHeight: 16,
-    ...fontWeights.light,
-  },
-  [ESharedTextCategory.p2]: {
-    fontSize: 12,
-    lineHeight: 14,
+    fontSize: 16,
+    lineHeight: 18,
     ...fontWeights.light,
   },
 };

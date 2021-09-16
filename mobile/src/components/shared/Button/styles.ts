@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { ColorTheme } from "@shared/ColorTheme";
+import { shadowStyles } from "@shared/style/shadow";
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,7 +10,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: ColorTheme.regular,
     borderRadius: 16,
-    elevation: 8,
+    ...shadowStyles.intense,
   },
   text: {
     color: "white",

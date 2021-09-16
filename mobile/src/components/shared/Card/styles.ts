@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { ColorTheme } from "@shared/ColorTheme";
+import { shadowStyles } from "@shared/style/shadow";
 
 export const styles = StyleSheet.create({
   card: {
@@ -9,7 +10,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "white",
     paddingHorizontal: 16,
     paddingVertical: 24,
-    elevation: 1,
+    ...shadowStyles.low
   },
   avatar: {
     width: 128,

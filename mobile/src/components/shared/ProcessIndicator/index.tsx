@@ -1,5 +1,5 @@
 import React from "react";
-import { Animated, Pressable } from "react-native";
+import { Animated, TouchableOpacity } from "react-native";
 import { EProcessState } from "@shared/EProcessState";
 import { SharedText } from "@components/shared/Text";
 import { styles } from "./styles";
@@ -41,11 +41,11 @@ export const ProcessIndicator: React.FC<IProcessIndicatorProps> = ({
         {ProcessMessage[state]}
       </SharedText>
       {state === EProcessState.Error && !!onReloadPress && (
-        <Pressable onPress={onReloadPress} style={styles.reloadButton}>
+        <TouchableOpacity onPress={() => {console.log('press'); onReloadPress();}} style={styles.reloadButton}>
           <SharedText category={"p1"} style={styles.reloadText}>
             Reload
           </SharedText>
-        </Pressable>
+        </TouchableOpacity>
       )}
     </Animated.View>
   );

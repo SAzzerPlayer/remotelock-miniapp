@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
     marginBottom: -8,
   },
-  periodText: { color: ColorTheme["hint-2"], marginTop: 4 },
+  periodText: { color: ColorTheme["hint-1"], marginVertical: 4,},
   statusBadge: { padding: 12, borderRadius: 8 },
   status: { textTransform: "uppercase" },
   avatar: {

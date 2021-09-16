@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import { ColorTheme } from "@shared/ColorTheme";
 import { getSharedTextStyle } from "@components/shared/Text/styles";
+import { shadowStyles } from "@shared/style/shadow";
 
 export const styles = StyleSheet.create({
   container: {
@@ -10,7 +11,7 @@ export const styles = StyleSheet.create({
     borderColor: ColorTheme["back-3"],
     borderWidth: 1,
     borderRadius: 8,
-    elevation: 2,
+    ...shadowStyles.regular,
   },
   input: {
     ...getSharedTextStyle("h2"),
