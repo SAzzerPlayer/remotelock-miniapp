@@ -29,7 +29,7 @@ export const DevicesList: React.FC = () => {
       <Spacer space={16} bottom>
         <DeviceCard
           name={name}
-          serial={modelNumber}
+          model={modelNumber}
           locked={state}
           onChangeLock={() => dispatch(DevicesActions.switchDeviceLock(id))}
         />

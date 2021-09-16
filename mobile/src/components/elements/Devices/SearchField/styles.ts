@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   container: {
     paddingVertical: 8,
     paddingHorizontal: 16,
-    backgroundColor: "white",
+    backgroundColor: ColorTheme.white,
     borderColor: ColorTheme["back-3"],
     borderWidth: 1,
     borderRadius: 8,

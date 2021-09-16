@@ -1,5 +1,8 @@
 import { IDevice, IFetchedDevice } from "@shared/interfaces/IDevice";
 
+//  It's used for camelCase code style rules 
+//  and for translation into typed fields(boolean, enum) from strings values
+
 export const extractFetchedDevice = ({
   id,
   type,

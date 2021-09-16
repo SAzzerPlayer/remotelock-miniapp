@@ -1,6 +1,6 @@
-export interface IFetchedUser {
-  id: string;
-  type: "lock" | string;
+import { IBaseObject } from "./IBaseObject";
+
+export interface IFetchedUser extends IBaseObject {
   attributes: {
     name: string;
     email: string | null;
@@ -19,9 +19,7 @@ export enum EUserStatus {
   Upcoming = 2,
 }
 
-export interface IUser {
-  id: string;
-  type: string;
+export interface IUser extends IBaseObject {
   attributes: {
     name: string;
     pin: string;

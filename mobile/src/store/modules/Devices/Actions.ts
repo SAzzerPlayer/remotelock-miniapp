@@ -9,6 +9,10 @@ import { IFetchedDevice } from "@shared/interfaces/IDevice";
 const withPrefix = (s: string) => `devices/${s}`;
 const loadDevicesSuffix = "LOAD_DEVICES";
 
+//  Extra typing is needed due to the mismatch of structures 
+//  between modules 'typesafe-actions' and 'redux-axios-middleware'.
+//  For correct definitions, the url field type is assigned to a specific string
+//  and separately params
 type TSearchRequest = {
   request: {
     url: "api/devices";

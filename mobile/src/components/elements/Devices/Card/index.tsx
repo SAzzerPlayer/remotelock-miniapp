@@ -6,21 +6,23 @@ import { ColorTheme } from "@shared/ColorTheme";
 import { styles } from "./styles";
 import { Button } from "@components/shared/Button";
 
-const lockedIconSource = require("@assets/locked.png");
-const unlockedIconSource = require("@assets/unlocked.png");
+const iconSource = {
+  locked: require("@assets/locked.png"),
+  unlocked: require("@assets/unlocked.png"),
+};
 
 interface IDeviceCardProps {
   name: string;
-  serial: string;
+  model: string;
   locked: boolean;
   onChangeLock: (v: boolean) => void;
 }
 
 export const DeviceCard = React.memo<IDeviceCardProps>(
-  ({ name, serial, locked, onChangeLock }) => (
+  ({ name, model, locked, onChangeLock }) => (
     <Card
       title={name}
-      hint={serial}
+      hint={model}
       avatarStyle={[
         styles.avatar,
         {
@@ -30,21 +32,27 @@ export const DeviceCard = React.memo<IDeviceCardProps>(
     >
       <View style={styles.flexWrapper}>
         <View style={styles.content}>
-        <Image
-          source={locked ? lockedIconSource : unlockedIconSource}
-          style={[
-            styles.lockIcon,
-            {
-              tintColor: locked ? ColorTheme.green : ColorTheme.red,
-            },
-          ]}
-        />
-        <Button
-          title={locked ? "Unlock" : "Lock"}
-          onPress={() => onChangeLock(!locked)}
-        /></View>
+          <Image
+            source={locked ? iconSource.locked : iconSource.unlocked}
+            style={[
+              styles.lockIcon,
+              {
+                tintColor: locked ? ColorTheme.green : ColorTheme.red,
+              },
+            ]}
+          />
+          <Button
+            title={locked ? "Unlock" : "Lock"}
+            onPress={() => onChangeLock(!locked)}
+          />
+        </View>
       </View>
     </Card>
   ),
-  dequal
+  /*onChangeLock changes aren't valuable, it updates only from object id*/
+  (prevProps, nextProps) =>
+    dequal(
+      { ...prevProps, onChangeLock: false },
+      { ...nextProps, onChangeLock: false }
+    )
 );

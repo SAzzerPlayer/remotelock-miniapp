@@ -1,6 +1,6 @@
-export interface IFetchedDevice {
-  id: string;
-  type: string;
+import { IBaseObject } from "./IBaseObject";
+
+export interface IFetchedDevice extends IBaseObject {
   attributes: {
     connected_at: string;
     firmware_version: string;
@@ -12,9 +12,7 @@ export interface IFetchedDevice {
     state: string;
   };
 }
-export interface IDevice {
-  id: string;
-  type: string;
+export interface IDevice extends IBaseObject {
   attributes: {
     connectedAt: string;
     firmwareVersion: string;

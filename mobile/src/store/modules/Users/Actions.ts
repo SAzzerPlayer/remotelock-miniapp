@@ -9,6 +9,10 @@ import { IFetchedUser } from "@shared/interfaces/IUser";
 const withPrefix = (s: string) => `users/${s}`;
 const loadUsersSuffix = "LOAD_USERS";
 
+//  Extra typing is needed due to the mismatch of structures 
+//  between modules 'typesafe-actions' and 'redux-axios-middleware'.
+//  For correct definitions, the url field type is assigned to a specific string
+//  and separately params
 type TSearchRequest = {
   request: {
     url: "api/users";

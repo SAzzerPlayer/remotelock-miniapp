@@ -6,7 +6,7 @@ import { ProcessIndicator } from "@components/shared/ProcessIndicator";
 
 export const DevicesLoader: React.FC = () => {
   const dispatch = useDispatch();
-  const { query, processState: process } = useDevicesSelector();
+  const { query, processState } = useDevicesSelector();
 
   const load = React.useCallback(
     () =>
@@ -20,12 +20,12 @@ export const DevicesLoader: React.FC = () => {
           },
         })
       ),
-    [query]
+    [dispatch, query]
   );
 
   React.useEffect(() => {
     load();
   }, [load]);
 
-  return <ProcessIndicator state={process} onReloadPress={load} />;
+  return <ProcessIndicator state={processState} onReloadPress={load} />;
 };
