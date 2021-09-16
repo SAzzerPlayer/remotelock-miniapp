@@ -3,7 +3,6 @@ import { FlatList, StyleSheet } from "react-native";
 import { useDispatch } from "react-redux";
 import { IDevice } from "../../../shared/IDevice";
 import { useDevicesSelector } from "../../../shared/selectors/useDevicesSelector";
-import { useUsersSelector } from "../../../shared/selectors/useUsersSelector";
 import { DevicesActions } from "../../../store/modules/Devices/Actions";
 import { EmptyResponseMessage } from "../../shared/EmptyResponseMessage";
 import { Spacer } from "../../shared/Spacer";
