@@ -1,5 +1,5 @@
-import { ColorTheme } from "../../../shared/ColorTheme";
-import { EProcessState } from "../../../shared/EProcessState";
+import { ColorTheme } from "@shared/ColorTheme";
+import { EProcessState } from "@shared/EProcessState";
 
 export const ProcessMessage = {
   [EProcessState.Waiting]: "",

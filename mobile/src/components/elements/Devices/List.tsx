@@ -1,10 +1,10 @@
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 import { useDispatch } from "react-redux";
-import { IDevice } from "../../../shared/IDevice";
-import { useDevicesSelector } from "../../../shared/selectors/useDevicesSelector";
-import { DevicesActions } from "../../../store/modules/Devices/Actions";
-import { Spacer } from "../../shared/Spacer";
+import { IDevice } from "@shared/interfaces/IDevice";
+import { useDevicesSelector } from "@shared/selectors/useDevicesSelector";
+import { DevicesActions } from "@store/modules/Devices/Actions";
+import { Spacer } from "@components/shared/Spacer";
 import { DeviceCard } from "./Card";
 
 const styles = StyleSheet.create({

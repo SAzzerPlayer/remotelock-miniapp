@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { styles, MAX_TRANSLATE_X } from "./styles";
 import { TabRoutesArray } from "./options";
-import { SharedText } from "../../components/shared/Text";
+import { SharedText } from "@components/shared/Text";
 
 interface ITopTabBarProps {
   navigate: (route: string) => void;

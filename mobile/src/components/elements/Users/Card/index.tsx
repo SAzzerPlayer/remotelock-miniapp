@@ -1,12 +1,12 @@
 import React from "react";
-import { Card } from "../../../shared/Card";
+import { Card } from "@components/shared/Card";
 import { View } from "react-native";
-import { SharedText } from "../../../shared/Text";
+import { SharedText } from "@components/shared/Text";
 import { dequal } from "dequal";
 import { styles } from "./styles";
 import { UserStatusBackground, UserStatusTitle } from "./options";
 import moment from "moment";
-import { EUserStatus } from "../../../../shared/IUser";
+import { EUserStatus } from "@shared/interfaces/IUser";
 
 type TDateFormat = string | number;
 const formatDate = (date: TDateFormat) => moment(date).format("MMM DD hh:mm A");

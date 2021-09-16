@@ -1,8 +1,8 @@
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";
-import { IUser } from "../../../shared/IUser";
-import { useUsersSelector } from "../../../shared/selectors/useUsersSelector";
-import { Spacer } from "../../shared/Spacer";
+import { IUser } from "@shared/interfaces/IUser";
+import { useUsersSelector } from "@shared/selectors/useUsersSelector";
+import { Spacer } from "@components/shared/Spacer";
 import { UserCard } from "./Card";
 
 const styles = StyleSheet.create({

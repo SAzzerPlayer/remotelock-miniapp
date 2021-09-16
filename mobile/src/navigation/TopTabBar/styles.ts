@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { ColorTheme } from "../../shared/ColorTheme";
+import { ColorTheme } from "@shared/ColorTheme";
 import { TabRoutesArray } from "./options";
 
 const { width } = Dimensions.get("screen");

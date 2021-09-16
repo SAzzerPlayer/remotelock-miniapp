@@ -3,8 +3,8 @@ import { AxiosResponse, AxiosError } from "axios";
 import {
   axiosErrorSuffix,
   axiosSuccessSuffix,
-} from "../../middlewares/axios/suffixes";
-import { IFetchedUser } from "../../../shared/IUser";
+} from "@store/middlewares/axios/suffixes";
+import { IFetchedUser } from "@shared/interfaces/IUser";
 
 const withPrefix = (s: string) => `users/${s}`;
 const loadUsersSuffix = "LOAD_USERS";

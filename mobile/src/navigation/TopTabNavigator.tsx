@@ -5,9 +5,9 @@ import {
 } from "@react-navigation/bottom-tabs";
 import { Routes } from "./Routes";
 import { TopTabBar } from "./TopTabBar";
-import { ColorTheme } from "../shared/ColorTheme";
-import { DevicesScreen } from "../screens/Devices";
-import { UsersScreen } from "../screens/Users";
+import { ColorTheme } from "@shared/ColorTheme";
+import { DevicesScreen } from "@screens/Devices";
+import { UsersScreen } from "@screens/Users";
 
 const Tab = createBottomTabNavigator();
 

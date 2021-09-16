@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { ColorTheme } from "../../../../shared/ColorTheme";
+import { ColorTheme } from "@shared/ColorTheme";
 
 export const styles = StyleSheet.create({
   statusPosition: {

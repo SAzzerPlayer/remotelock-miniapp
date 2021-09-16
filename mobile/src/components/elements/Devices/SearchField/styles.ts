@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { ColorTheme } from "../../../../shared/ColorTheme";
-import { getSharedTextStyle } from "../../../shared/Text/styles";
+import { ColorTheme } from "@shared/ColorTheme";
+import { getSharedTextStyle } from "@components/shared/Text/styles";
 
 export const styles = StyleSheet.create({
   container: {

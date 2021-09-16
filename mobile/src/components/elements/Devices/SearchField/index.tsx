@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TextInput } from "react-native";
 import { useDispatch } from "react-redux";
-import { DevicesActions } from "../../../../store/modules/Devices/Actions";
+import { DevicesActions } from "@store/modules/Devices/Actions";
 import { styles } from "./styles";
 
 export const SearchField: React.FC = () => {

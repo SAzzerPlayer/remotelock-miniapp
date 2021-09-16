@@ -1,13 +1,13 @@
 import React from "react";
-import { Card } from "../../../shared/Card";
+import { Card } from "@components/shared/Card";
 import { View, Image } from "react-native";
 import { dequal } from "dequal";
-import { ColorTheme } from "../../../../shared/ColorTheme";
+import { ColorTheme } from "@shared/ColorTheme";
 import { styles } from "./styles";
-import { Button } from "../../../shared/Button";
+import { Button } from "@components/shared/Button";
 
-const lockedIconSource = require("../../../../assets/locked.png");
-const unlockedIconSource = require("../../../../assets/unlocked.png");
+const lockedIconSource = require("@assets/locked.png");
+const unlockedIconSource = require("@assets/unlocked.png");
 
 interface IDeviceCardProps {
   name: string;

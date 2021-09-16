@@ -1,6 +1,6 @@
 import { createReducer } from "typesafe-actions";
-import { EProcessState } from "../../../shared/EProcessState";
-import { extractFetchedDevice } from "../../../shared/utils/extractFetchedDevice";
+import { EProcessState } from "@shared/EProcessState";
+import { extractFetchedDevice } from "@shared/utils/extractFetchedDevice";
 import { DevicesActions } from "./Actions";
 import { IDevicesState } from "./IDevicesState";
 

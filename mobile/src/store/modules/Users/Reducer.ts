@@ -1,8 +1,8 @@
 import { createReducer } from "typesafe-actions";
-import { EProcessState } from "../../../shared/EProcessState";
+import { EProcessState } from "@shared/EProcessState";
 import { UsersActions } from "./Actions";
 import { IUsersState } from "./IUsersState";
-import { extractFetchedUser } from "../../../shared/utils/extractFetchedUser";
+import { extractFetchedUser } from "@shared/utils/extractFetchedUser";
 
 const initialState: IUsersState = {
   users: [],

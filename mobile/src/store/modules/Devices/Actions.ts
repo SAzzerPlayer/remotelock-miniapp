@@ -3,8 +3,8 @@ import { AxiosResponse, AxiosError } from "axios";
 import {
   axiosErrorSuffix,
   axiosSuccessSuffix,
-} from "../../middlewares/axios/suffixes";
-import { IFetchedDevice } from "../../../shared/IDevice";
+} from "@store/middlewares/axios/suffixes";
+import { IFetchedDevice } from "@shared/interfaces/IDevice";
 
 const withPrefix = (s: string) => `devices/${s}`;
 const loadDevicesSuffix = "LOAD_DEVICES";

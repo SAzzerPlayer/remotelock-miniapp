@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useDevicesSelector } from "../../../shared/selectors/useDevicesSelector";
-import { DevicesActions } from "../../../store/modules/Devices/Actions";
-import { ProcessIndicator } from "../../shared/ProcessIndicator";
+import { useDevicesSelector } from "@shared/selectors/useDevicesSelector";
+import { DevicesActions } from "@store/modules/Devices/Actions";
+import { ProcessIndicator } from "@components/shared/ProcessIndicator";
 
 export const DevicesLoader: React.FC = () => {
   const dispatch = useDispatch();

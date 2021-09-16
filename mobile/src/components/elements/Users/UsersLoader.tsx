@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useUsersSelector } from "../../../shared/selectors/useUsersSelector";
-import { UsersActions } from "../../../store/modules/Users/Actions";
-import { ProcessIndicator } from "../../shared/ProcessIndicator";
+import { useUsersSelector } from "@shared/selectors/useUsersSelector";
+import { UsersActions } from "@store/modules/Users/Actions";
+import { ProcessIndicator } from "@components/shared/ProcessIndicator";
 
 export const UsersLoader: React.FC = () => {
   const dispatch = useDispatch();

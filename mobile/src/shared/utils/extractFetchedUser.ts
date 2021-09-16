@@ -1,4 +1,4 @@
-import { IFetchedUser, IUser, EUserStatus } from "../IUser";
+import { IFetchedUser, IUser, EUserStatus } from "@shared/interfaces/IUser";
 
 const extractFetchedUserStatus = (status: string) => {
   if (status === "current") return EUserStatus.Current;
@@ -25,10 +25,10 @@ export const extractFetchedUser = ({
   attributes: {
     name,
     pin,
-    email,
-    phone,
-    startsAt: starts_at,
-    endsAt: ends_at,
+    email: email ?? undefined,
+    phone: phone ?? undefined,
+    startsAt: starts_at ?? undefined,
+    endsAt: ends_at ?? undefined,
     status: extractFetchedUserStatus(status),
     deviceTimeZone: device_time_zone,
   },

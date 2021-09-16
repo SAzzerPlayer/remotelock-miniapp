@@ -1,4 +1,4 @@
-import { Routes } from "../Routes";
+import { Routes } from "@navigation/Routes";
 
 interface ITabRoute {
   title: string;

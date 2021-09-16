@@ -1,4 +1,4 @@
-import { IDevice, IFetchedDevice } from "../IDevice";
+import { IDevice, IFetchedDevice } from "@shared/interfaces/IDevice";
 
 export const extractFetchedDevice = ({
   id,

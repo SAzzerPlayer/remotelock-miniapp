@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import { SharedText } from "../Text";
+import { SharedText } from "@components/shared/Text";
 import { styles } from "./styles";
 
 interface IButtonProps {

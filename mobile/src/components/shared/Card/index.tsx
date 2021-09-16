@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image } from "react-native";
-import { SharedText } from "../Text";
+import { SharedText } from "@components/shared/Text";
 import { styles } from "./styles";
 
 interface ICardProps {

@@ -1,5 +1,5 @@
-import { ColorTheme } from "../../../../shared/ColorTheme";
-import { EUserStatus } from "../../../../shared/IUser";
+import { ColorTheme } from "@shared/ColorTheme";
+import { EUserStatus } from "@shared/interfaces/IUser";
 
 export const UserStatusTitle: Record<EUserStatus, string> = {
   [EUserStatus.Unavailable]: "Unavailable",
