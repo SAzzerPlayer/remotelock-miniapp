@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     ...shadowStyles.regular,
   },
   input: {
-    ...getSharedTextStyle("h2"),
+    ...getSharedTextStyle("s1"),
     fontSize: 18,
     includeFontPadding: false,
   },

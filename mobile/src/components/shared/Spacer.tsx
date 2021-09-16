@@ -7,7 +7,8 @@ interface ISpacerProps {
   left?: boolean;
   right?: boolean;
   bottom?: boolean;
-  zIndex?: number;
+  horizontal?: boolean;
+  vertical?: boolean;
 }
 
 export const Spacer: React.FC<ISpacerProps> = ({
@@ -16,16 +17,16 @@ export const Spacer: React.FC<ISpacerProps> = ({
   left,
   right,
   bottom,
-  zIndex,
+  horizontal,
+  vertical,
   children,
 }) => (
   <View
     style={{
-      marginTop: top ? space : 0,
-      marginLeft: left ? space : 0,
-      marginRight: right ? space : 0,
-      marginBottom: bottom ? space : 0,
-      zIndex
+      marginTop: top || vertical ? space : 0,
+      marginLeft: left || horizontal ? space : 0,
+      marginRight: right || horizontal ? space : 0,
+      marginBottom: bottom || vertical ? space : 0,
     }}
   >
     {children}

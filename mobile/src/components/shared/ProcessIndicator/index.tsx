@@ -1,5 +1,5 @@
 import React from "react";
-import { Animated, Pressable} from "react-native";
+import { Animated, Pressable } from "react-native";
 import { EProcessState } from "@shared/EProcessState";
 import { SharedText } from "@components/shared/Text";
 import { styles } from "./styles";

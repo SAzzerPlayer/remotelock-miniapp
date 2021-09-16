@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
     marginBottom: -8,
   },
-  periodText: { color: ColorTheme["hint-1"], marginVertical: 4,},
-  statusBadge: { padding: 12, borderRadius: 8 },
+  periodText: { color: ColorTheme["hint-1"], marginVertical: 4 },
+  statusBadge: { paddingVertical: 8, paddingHorizontal: 12, borderRadius: 8 },
   status: { textTransform: "uppercase" },
   avatar: {
     borderWidth: 3,

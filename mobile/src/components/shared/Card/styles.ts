@@ -1,6 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import { ColorTheme } from "@shared/ColorTheme";
 import { shadowStyles } from "@shared/style/shadow";
+
+const {width} = Dimensions.get('screen');
+const AVATAR_SIZE = Math.round(Math.max(width * 0.3, 128));
 
 export const styles = StyleSheet.create({
   card: {
@@ -13,9 +16,9 @@ export const styles = StyleSheet.create({
     ...shadowStyles.low
   },
   avatar: {
-    width: 128,
+    width: AVATAR_SIZE,
     aspectRatio: 1,
-    borderRadius: 64,
+    borderRadius: AVATAR_SIZE / 2,
     borderWidth: 1,
     borderColor: ColorTheme["back-3"],
     backgroundColor: ColorTheme["back-2"],

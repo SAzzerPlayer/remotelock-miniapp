@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: ColorTheme["back-3"],
+    backgroundColor: ColorTheme["back-2"],
     borderRadius: 8,
     padding: INNER_PADDING,
     ...shadowStyles.regular

@@ -1,18 +1,18 @@
-import { StyleSheet, Platform } from "react-native";
+import { StyleSheet } from "react-native";
 import { ColorTheme } from "@shared/ColorTheme";
+import { shadowStyles } from "@shared/style/shadow";
 
 export const styles = StyleSheet.create({
   container: {
-    position: "absolute",
     flexDirection: "row",
-    width: "100%",
-    minHeight: 40,
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
+    minHeight: 40,
     backgroundColor: "transparent",
     paddingVertical: 8,
     opacity: 0,
-    zIndex: 1,
+    ...shadowStyles.intense,
   },
   message: {
     color: ColorTheme.white,
