@@ -1,9 +1,9 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
 import { ColorTheme } from "@shared/ColorTheme";
 import { shadowStyles } from "@shared/style/shadow";
+import { getSmallerDimensionValue } from "@shared/utils/getSmallerDimensionValue";
 
-const {width} = Dimensions.get('screen');
-const AVATAR_SIZE = Math.round(Math.max(width * 0.3, 128));
+const AVATAR_SIZE = Math.round(Math.min(getSmallerDimensionValue() * 0.3, 192));
 
 export const styles = StyleSheet.create({
   card: {
@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     backgroundColor: ColorTheme.white,
     paddingHorizontal: 16,
     paddingVertical: 24,
-    ...shadowStyles.low
+    ...shadowStyles.low,
   },
   avatar: {
     width: AVATAR_SIZE,

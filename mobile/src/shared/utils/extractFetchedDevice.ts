@@ -1,24 +1,21 @@
 import { IDevice, IFetchedDevice } from "@shared/interfaces/IDevice";
 
-//  It's used for camelCase code style rules 
+//  It's used for camelCase code style rules
 //  and for translation into typed fields(boolean, enum) from strings values
 
 export const extractFetchedDevice = ({
-  id,
-  type,
   attributes: {
+    name,
     connected_at,
     firmware_version,
     model_number,
-    name,
     power_source,
     programming_code,
     serial_number,
     state,
   },
+  ...other
 }: IFetchedDevice): IDevice => ({
-  id,
-  type,
   attributes: {
     name,
     connectedAt: connected_at,
@@ -29,4 +26,5 @@ export const extractFetchedDevice = ({
     serialNumber: serial_number,
     state: state === "locked",
   },
+  ...other,
 });

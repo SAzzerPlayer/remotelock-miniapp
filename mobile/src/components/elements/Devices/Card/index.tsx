@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "@components/shared/Card";
-import { View, Image } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import { dequal } from "dequal";
 import { ColorTheme } from "@shared/ColorTheme";
 import { styles } from "./styles";
@@ -23,12 +23,12 @@ export const DeviceCard = React.memo<IDeviceCardProps>(
     <Card
       title={name}
       hint={model}
-      avatarStyle={[
+      avatarStyle={StyleSheet.flatten([
         styles.avatar,
         {
           borderColor: locked ? ColorTheme.green : ColorTheme.red,
         },
-      ]}
+      ])}
     >
       <View style={styles.flexWrapper}>
         <View style={styles.content}>

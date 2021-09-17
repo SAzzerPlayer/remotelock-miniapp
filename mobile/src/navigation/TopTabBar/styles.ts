@@ -1,12 +1,14 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
 import { ColorTheme } from "@shared/ColorTheme";
 import { TabRoutesArray } from "./options";
 import { shadowStyles } from "@shared/style/shadow";
+import { getSmallerDimensionValue } from "@shared/utils/getSmallerDimensionValue";
 
-const { width } = Dimensions.get("screen");
+const SMALLER_SCREEN_DIMENSION = getSmallerDimensionValue();
 const CONTAINER_PADDING = 16;
 const INNER_PADDING = 4;
-const ALL_TABS_WIDTH = width - CONTAINER_PADDING * 2 - INNER_PADDING * 2;
+const ALL_TABS_WIDTH =
+  SMALLER_SCREEN_DIMENSION - CONTAINER_PADDING * 2 - INNER_PADDING * 2;
 const TAB_WIDTH = ALL_TABS_WIDTH / TabRoutesArray.length;
 export const MAX_TRANSLATE_X = ALL_TABS_WIDTH - TAB_WIDTH;
 
@@ -14,8 +16,8 @@ export const styles = StyleSheet.create({
   container: {
     position: "absolute",
     top: 0,
-    left: 0,
-    right: 0,
+    width: SMALLER_SCREEN_DIMENSION,
+    alignSelf: "center",
     padding: CONTAINER_PADDING,
     paddingBottom: 0,
     backgroundColor: ColorTheme["back-2"],
@@ -32,10 +34,10 @@ export const styles = StyleSheet.create({
   },
   animatableBackground: {
     position: "absolute",
-    left: 4,
     height: "100%",
-    backgroundColor: ColorTheme.white,
     width: TAB_WIDTH,
+    left: INNER_PADDING,
+    backgroundColor: ColorTheme.white,
     borderRadius: 8,
     ...shadowStyles.regular,
     elevation: shadowStyles.regular.elevation + 1,

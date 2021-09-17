@@ -1,4 +1,4 @@
-import { StyleSheet , Platform} from "react-native";
+import { StyleSheet, Platform } from "react-native";
 import { ColorTheme } from "@shared/ColorTheme";
 import { ESharedTextCategory, TSharedTextProp } from "./options";
 
@@ -11,15 +11,15 @@ export const styles = StyleSheet.create({
 
 const fontWeights = {
   bold: {
-    fontFamily: Platform.OS === 'android' ? "sans-serif-medium" : undefined,
+    fontFamily: Platform.OS === "android" ? "sans-serif-medium" : undefined,
     fontWeight: "700",
   },
   regular: {
-    fontFamily: Platform.OS === 'android' ? "sans-serif" : undefined,
+    fontFamily: Platform.OS === "android" ? "sans-serif" : undefined,
     fontWeight: "500",
   },
   light: {
-    fontFamily: Platform.OS === 'android' ? "sans-serif-light" : undefined,
+    fontFamily: Platform.OS === "android" ? "sans-serif-light" : undefined,
     fontWeight: "300",
   },
 };

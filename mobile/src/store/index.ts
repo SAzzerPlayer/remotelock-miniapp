@@ -9,7 +9,7 @@ import * as Reducers from "./modules";
 
 const middlewares: Middleware[] = [axiosMiddleware];
 
-export const store = createStore<any, any, any, any>(
+export const store = createStore(
   combineReducers(Reducers),
   applyMiddleware(...middlewares),
 );

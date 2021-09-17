@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "@components/shared/Card";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { SharedText } from "@components/shared/Text";
 import { dequal } from "dequal";
 import { styles } from "./styles";
@@ -27,16 +27,16 @@ export const UserCard = React.memo<IUserCardProps>(
       ? `${formatDate(period.start)} - ${formatDate(period.end)}`
       : undefined;
 
-    const avatarStyle = [
+    const avatarStyle = StyleSheet.flatten([
       styles.avatar,
       {
         borderColor: UserStatusBackground[status],
       },
-    ];
-    const statusBadgeStyle = [
+    ]);
+    const statusBadgeStyle = StyleSheet.flatten([
       styles.statusBadge,
       { backgroundColor: UserStatusBackground[status] },
-    ];
+    ]);
 
     return (
       <Card title={name} hint={contactInfo} avatarStyle={avatarStyle}>

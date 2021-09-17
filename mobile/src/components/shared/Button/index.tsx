@@ -1,12 +1,12 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, ViewStyle } from "react-native";
 import { SharedText } from "@components/shared/Text";
 import { styles } from "./styles";
 
 interface IButtonProps {
   onPress: () => void;
   title: string;
-  style?: Record<string, any>;
+  style?: ViewStyle;
 }
 
 export const Button: React.FC<IButtonProps> = ({ onPress, title, style }) => (

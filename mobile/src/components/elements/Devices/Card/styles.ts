@@ -8,7 +8,11 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
     marginBottom: -8,
   },
-  content: {flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end'},
+  content: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+  },
   lockIcon: {
     width: 40,
     aspectRatio: 1,

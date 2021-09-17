@@ -1,12 +1,12 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { View, Image, ImageStyle } from "react-native";
 import { SharedText } from "@components/shared/Text";
 import { styles } from "./styles";
 
 interface ICardProps {
   title: string;
   hint?: string;
-  avatarStyle?: Record<string, any>;
+  avatarStyle?: ImageStyle;
 }
 
 export const Card: React.FC<ICardProps> = ({
@@ -17,8 +17,8 @@ export const Card: React.FC<ICardProps> = ({
 }) => (
   <View style={styles.card}>
     <Image
-      source={require("../../../assets/kitten.jpg")}
-      style={[styles.avatar, avatarStyle]}
+      source={require("@assets/kitten.jpg")}
+      style={avatarStyle ? [styles.avatar, avatarStyle] : styles.avatar}
     />
     <View style={styles.content}>
       <SharedText category="h1" numberOfLines={3}>
