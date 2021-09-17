@@ -11,21 +11,17 @@ const extractFetchedUserStatus = (status: string) => {
 
 export const extractFetchedUser = ({
   attributes: {
-    email,
     starts_at,
     ends_at,
     status,
-    phone,
     device_time_zone,
     ...otherAttributes
   },
   ...other
 }: IFetchedUser): IUser => ({
   attributes: {
-    email: email ?? undefined,
-    phone: phone ?? undefined,
-    startsAt: starts_at ?? undefined,
-    endsAt: ends_at ?? undefined,
+    startsAt: starts_at,
+    endsAt: ends_at,
     status: extractFetchedUserStatus(status),
     deviceTimeZone: device_time_zone,
     ...otherAttributes,

@@ -8,6 +8,7 @@ export const SearchField: React.FC = () => {
   const dispatch = useDispatch();
   const [value, setValue] = React.useState("");
 
+  // Debounced timeout, to decrease unnecessary loads
   const timeoutRef = React.useRef<any>(null);
   React.useEffect(() => {
     timeoutRef.current = setTimeout(

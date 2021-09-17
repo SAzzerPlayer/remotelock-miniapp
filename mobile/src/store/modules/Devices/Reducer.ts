@@ -11,44 +11,36 @@ const initialState: IDevicesState = {
 };
 
 export const DevicesReducer = createReducer(initialState)
-  .handleAction(DevicesActions.searchDevicesAsync.request, (state) => {
-    return {
-      ...state,
-      processState: EProcessState.Loading,
-    };
-  })
-  .handleAction(DevicesActions.searchDevicesAsync.success, (state, action) => {
-    return {
-      ...state,
-      devices: action.payload.data.data.map(extractFetchedDevice),
-      processState:
-        action.payload.data.data.length > 0
-          ? EProcessState.Waiting
-          : EProcessState.EmptyResponse,
-    };
-  })
+  .handleAction(DevicesActions.searchDevicesAsync.request, (state) => ({
+    ...state,
+    processState: EProcessState.Loading,
+  }))
+  .handleAction(DevicesActions.searchDevicesAsync.success, (state, action) => ({
+    ...state,
+    devices: action.payload.data.data.map(extractFetchedDevice),
+    processState:
+      action.payload.data.data.length > 0
+        ? EProcessState.Waiting
+        : EProcessState.EmptyResponse,
+  }))
   .handleAction(DevicesActions.setQuery, (state, action) => ({
     ...state,
     query: action.payload,
   }))
-  .handleAction(DevicesActions.searchDevicesAsync.failure, (state) => {
-    return {
-      ...state,
-      processState: EProcessState.Error,
-    };
-  })
-  .handleAction(DevicesActions.switchDeviceLock, (state, action) => {
-    const devices = [...state.devices];
-    const deviceIndex = devices.findIndex((d) => d.id === action.payload);
-    if (deviceIndex > -1) {
-      devices[deviceIndex].attributes.state = !devices[deviceIndex].attributes
-        .state;
-    }
-    return {
-      ...state,
-      devices,
-    };
-  })
+  .handleAction(DevicesActions.searchDevicesAsync.failure, (state) => ({
+    ...state,
+    processState: EProcessState.Error,
+  }))
+  .handleAction(DevicesActions.switchDeviceLock, (state, action) => ({
+    ...state,
+    devices: state.devices.reduce((arr, d) => {
+      if (d.id === action.payload) {
+        d.attributes.state = !d.attributes.state;
+      }
+      arr.push(d);
+      return arr;
+    }, []),
+  }))
   .handleAction(DevicesActions.reset, () => ({
     ...initialState,
   }));

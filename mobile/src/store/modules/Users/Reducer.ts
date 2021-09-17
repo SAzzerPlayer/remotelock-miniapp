@@ -25,7 +25,6 @@ export const UsersReducer = createReducer(initialState)
   .handleAction(UsersActions.loadUsersAsync.failure, (state) => ({
     ...state,
     processState: EProcessState.Error,
-    users: [],
   }))
   .handleAction(UsersActions.reset, () => ({
     ...initialState,
