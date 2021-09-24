@@ -49,7 +49,7 @@ export const DeviceCard = React.memo<IDeviceCardProps>(
       </View>
     </Card>
   ),
-  /*onChangeLock changes aren't valuable, it updates only from object id*/
+  /*onChangeLock changes aren't valuable, it updates only from dispatch obj*/
   (prevProps, nextProps) =>
     dequal(
       { ...prevProps, onChangeLock: false },

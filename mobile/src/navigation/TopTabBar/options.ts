@@ -5,7 +5,7 @@ interface ITabRoute {
   route: string;
 }
 
-export const TabRoutesArray: ITabRoute[] = [
+export const tabRoutesArray: ITabRoute[] = [
   {
     title: 'Devices',
     route: Routes.Devices,

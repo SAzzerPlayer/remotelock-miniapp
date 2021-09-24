@@ -1,9 +1,9 @@
 import { createAction, createAsyncAction } from 'typesafe-actions';
 import { AxiosResponse, AxiosError } from 'axios';
 import {
-  axiosErrorSuffix,
-  axiosSuccessSuffix,
-} from '@store/middlewares/axios/suffixes';
+  axiosErrorPostfix,
+  axiosSuccessPostfix,
+} from '@store/middlewares/axios/postfixes';
 import { IFetchedDevice } from '@shared/interfaces/IDevice';
 
 const withPrefix = (s: string) => `devices/${s}`;
@@ -25,8 +25,8 @@ type TSearchRequest = {
 export const DevicesActions = {
   searchDevicesAsync: createAsyncAction(
     withPrefix(loadDevicesSuffix),
-    withPrefix(loadDevicesSuffix + axiosSuccessSuffix),
-    withPrefix(loadDevicesSuffix + axiosErrorSuffix),
+    withPrefix(loadDevicesSuffix + axiosSuccessPostfix),
+    withPrefix(loadDevicesSuffix + axiosErrorPostfix),
   )<TSearchRequest, AxiosResponse<{ data: IFetchedDevice[] }>, AxiosError>(),
   switchDeviceLock: createAction(withPrefix('SWITCH_DEVICE_LOCK'))<string>(),
   setQuery: createAction(withPrefix('SET_QUERY'))<string>(),

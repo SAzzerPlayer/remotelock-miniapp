@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { ColorTheme } from '@shared/ColorTheme';
-import { TabRoutesArray } from './options';
+import { tabRoutesArray } from './options';
 import { shadowStyles } from '@shared/style/shadow';
 import { getSmallerDimensionValue } from '@shared/utils/getSmallerDimensionValue';
 
@@ -9,7 +9,7 @@ const CONTAINER_PADDING = 16;
 const INNER_PADDING = 4;
 const ALL_TABS_WIDTH =
   SMALLER_SCREEN_DIMENSION - CONTAINER_PADDING * 2 - INNER_PADDING * 2;
-const TAB_WIDTH = ALL_TABS_WIDTH / TabRoutesArray.length;
+const TAB_WIDTH = ALL_TABS_WIDTH / tabRoutesArray.length;
 export const MAX_TRANSLATE_X = ALL_TABS_WIDTH - TAB_WIDTH;
 
 export const styles = StyleSheet.create({

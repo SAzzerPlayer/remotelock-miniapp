@@ -3,7 +3,7 @@ import { Animated, Pressable, StyleSheet } from 'react-native';
 import { EProcessState } from '@shared/EProcessState';
 import { SharedText } from '@components/shared/Text';
 import { styles } from './styles';
-import { ProcessColor, ProcessMessage } from './options';
+import { processColorDict, processMessageDict } from './options';
 
 interface IProcessIndicatorProps {
   state: EProcessState;
@@ -31,7 +31,7 @@ export const ProcessIndicator: React.FC<IProcessIndicatorProps> = ({
       StyleSheet.flatten([
         styles.container,
         {
-          backgroundColor: ProcessColor[state],
+          backgroundColor: processColorDict[state],
           opacity,
         },
       ]),
@@ -41,7 +41,7 @@ export const ProcessIndicator: React.FC<IProcessIndicatorProps> = ({
   return (
     <Animated.View style={containerStyle}>
       <SharedText category="p1" style={styles.message}>
-        {ProcessMessage[state]}
+        {processMessageDict[state]}
       </SharedText>
       {state === EProcessState.Error && !!onReloadPress && (
         <Pressable onPress={onReloadPress} style={styles.reloadButton}>

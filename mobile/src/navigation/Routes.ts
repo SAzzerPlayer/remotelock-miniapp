@@ -1,4 +1,4 @@
 export const Routes = {
-  Devices: 'root/devices',
-  Users: 'root/users',
+  Devices: 'devices',
+  Users: 'users',
 };

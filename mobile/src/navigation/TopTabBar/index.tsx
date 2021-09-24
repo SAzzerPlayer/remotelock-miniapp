@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { styles, MAX_TRANSLATE_X } from './styles';
-import { TabRoutesArray } from './options';
+import { tabRoutesArray } from './options';
 import { SharedText } from '@components/shared/Text';
 
 interface ITopTabBarProps {
@@ -31,7 +31,7 @@ export const TopTabBar: React.FC<ITopTabBarProps> = ({
         useNativeDriver: true,
       });
       animateRef.current.start();
-      navigate(TabRoutesArray[index].route);
+      navigate(tabRoutesArray[index].route);
     },
     [navigate, transform],
   );
@@ -44,7 +44,7 @@ export const TopTabBar: React.FC<ITopTabBarProps> = ({
           transform: [
             {
               translateX: transform.interpolate({
-                inputRange: [0, TabRoutesArray.length - 1],
+                inputRange: [0, tabRoutesArray.length - 1],
                 outputRange: [0, MAX_TRANSLATE_X],
               }),
             },
@@ -58,7 +58,7 @@ export const TopTabBar: React.FC<ITopTabBarProps> = ({
     <View style={styles.container} onLayout={onLayout}>
       <View style={styles.inner}>
         <Animated.View style={tabBackgroundStyle} />
-        {TabRoutesArray.map(({ title }, index) => (
+        {tabRoutesArray.map(({ title }, index) => (
           <Pressable
             key={index}
             onPress={onTabPress(index)}

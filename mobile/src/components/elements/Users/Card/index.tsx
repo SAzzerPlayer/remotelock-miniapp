@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native';
 import { SharedText } from '@components/shared/Text';
 import { dequal } from 'dequal';
 import { styles } from './styles';
-import { UserStatusBackground, UserStatusTitle } from './options';
+import { userStatusBackgroundDict, userStatusTitleDict } from './options';
 import moment from 'moment';
 import { EUserStatus } from '@shared/interfaces/IUser';
 
@@ -30,12 +30,12 @@ export const UserCard = React.memo<IUserCardProps>(
     const avatarStyle = StyleSheet.flatten([
       styles.avatar,
       {
-        borderColor: UserStatusBackground[status],
+        borderColor: userStatusBackgroundDict[status],
       },
     ]);
     const statusBadgeStyle = StyleSheet.flatten([
       styles.statusBadge,
-      { backgroundColor: UserStatusBackground[status] },
+      { backgroundColor: userStatusBackgroundDict[status] },
     ]);
 
     return (
@@ -48,7 +48,7 @@ export const UserCard = React.memo<IUserCardProps>(
         <View style={styles.statusPosition}>
           <View style={statusBadgeStyle}>
             <SharedText category="h3" style={styles.status}>
-              {UserStatusTitle[status]}
+              {userStatusTitleDict[status]}
             </SharedText>
           </View>
         </View>
