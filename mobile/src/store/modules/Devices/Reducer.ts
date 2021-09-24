@@ -1,17 +1,17 @@
-import { createReducer } from "typesafe-actions";
-import { EProcessState } from "@shared/EProcessState";
-import { extractFetchedDevice } from "@shared/utils/extractFetchedDevice";
-import { DevicesActions } from "./Actions";
-import { IDevicesState } from "./IDevicesState";
+import { createReducer } from 'typesafe-actions';
+import { EProcessState } from '@shared/EProcessState';
+import { extractFetchedDevice } from '@shared/utils/extractFetchedDevice';
+import { DevicesActions } from './Actions';
+import { IDevicesState } from './IDevicesState';
 
 const initialState: IDevicesState = {
   devices: [],
-  query: "",
+  query: '',
   processState: EProcessState.Waiting,
 };
 
 export const DevicesReducer = createReducer(initialState)
-  .handleAction(DevicesActions.searchDevicesAsync.request, (state) => ({
+  .handleAction(DevicesActions.searchDevicesAsync.request, state => ({
     ...state,
     processState: EProcessState.Loading,
   }))
@@ -27,7 +27,7 @@ export const DevicesReducer = createReducer(initialState)
     ...state,
     query: action.payload,
   }))
-  .handleAction(DevicesActions.searchDevicesAsync.failure, (state) => ({
+  .handleAction(DevicesActions.searchDevicesAsync.failure, state => ({
     ...state,
     processState: EProcessState.Error,
   }))

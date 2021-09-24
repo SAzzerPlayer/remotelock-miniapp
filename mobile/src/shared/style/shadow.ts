@@ -1,6 +1,6 @@
 export const shadowStyles = {
   low: {
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -10,7 +10,7 @@ export const shadowStyles = {
     elevation: 3,
   },
   regular: {
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -20,7 +20,7 @@ export const shadowStyles = {
     elevation: 5,
   },
   intense: {
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 3,

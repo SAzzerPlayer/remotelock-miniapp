@@ -1,9 +1,9 @@
-import React from "react";
-import { DevicesLoader } from "@components/elements/Devices/DevicesLoader";
-import { DevicesList } from "@components/elements/Devices/List";
-import { SearchField } from "@components/elements/Devices/SearchField";
-import { Spacer } from "@components/shared/Spacer";
-import { AbsolutePosition } from "@components/shared/AbsolutePosition";
+import React from 'react';
+import { DevicesLoader } from '@components/elements/Devices/DevicesLoader';
+import { DevicesList } from '@components/elements/Devices/List';
+import { SearchField } from '@components/elements/Devices/SearchField';
+import { Spacer } from '@components/shared/Spacer';
+import { AbsolutePosition } from '@components/shared/AbsolutePosition';
 
 const loaderTopOffset = 4;
 

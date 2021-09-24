@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import {
   View,
   Animated,
   Pressable,
   LayoutChangeEvent,
   StyleSheet,
-} from "react-native";
-import { styles, MAX_TRANSLATE_X } from "./styles";
-import { TabRoutesArray } from "./options";
-import { SharedText } from "@components/shared/Text";
+} from 'react-native';
+import { styles, MAX_TRANSLATE_X } from './styles';
+import { TabRoutesArray } from './options';
+import { SharedText } from '@components/shared/Text';
 
 interface ITopTabBarProps {
   navigate: (route: string) => void;
@@ -21,7 +21,7 @@ export const TopTabBar: React.FC<ITopTabBarProps> = ({
 }) => {
   const [transform] = React.useState(new Animated.Value(0));
 
-  const animateRef = React.useRef<any>(null);
+  const animateRef = React.useRef<ReturnType<typeof Animated.timing>>(null);
   const onTabPress = React.useCallback(
     (index: number) => () => {
       animateRef.current?.stop && animateRef.current.stop();
@@ -33,7 +33,7 @@ export const TopTabBar: React.FC<ITopTabBarProps> = ({
       animateRef.current.start();
       navigate(TabRoutesArray[index].route);
     },
-    [navigate]
+    [navigate, transform],
   );
 
   const tabBackgroundStyle = React.useMemo(
@@ -51,7 +51,7 @@ export const TopTabBar: React.FC<ITopTabBarProps> = ({
           ],
         },
       ]),
-    [transform]
+    [transform],
   );
 
   return (

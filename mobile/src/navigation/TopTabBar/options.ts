@@ -1,4 +1,4 @@
-import { Routes } from "@navigation/Routes";
+import { Routes } from '@navigation/Routes';
 
 interface ITabRoute {
   title: string;
@@ -7,11 +7,11 @@ interface ITabRoute {
 
 export const TabRoutesArray: ITabRoute[] = [
   {
-    title: "Devices",
+    title: 'Devices',
     route: Routes.Devices,
   },
   {
-    title: "Users",
+    title: 'Users',
     route: Routes.Users,
   },
 ];

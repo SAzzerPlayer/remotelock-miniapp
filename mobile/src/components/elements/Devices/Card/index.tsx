@@ -1,14 +1,14 @@
-import React from "react";
-import { Card } from "@components/shared/Card";
-import { View, Image, StyleSheet } from "react-native";
-import { dequal } from "dequal";
-import { ColorTheme } from "@shared/ColorTheme";
-import { styles } from "./styles";
-import { Button } from "@components/shared/Button";
+import React from 'react';
+import { Card } from '@components/shared/Card';
+import { View, Image, StyleSheet } from 'react-native';
+import { dequal } from 'dequal';
+import { ColorTheme } from '@shared/ColorTheme';
+import { styles } from './styles';
+import { Button } from '@components/shared/Button';
 
 const iconSource = {
-  locked: require("@assets/locked.png"),
-  unlocked: require("@assets/unlocked.png"),
+  locked: require('@assets/locked.png'),
+  unlocked: require('@assets/unlocked.png'),
 };
 
 interface IDeviceCardProps {
@@ -42,7 +42,7 @@ export const DeviceCard = React.memo<IDeviceCardProps>(
             ]}
           />
           <Button
-            title={locked ? "Unlock" : "Lock"}
+            title={locked ? 'Unlock' : 'Lock'}
             onPress={() => onChangeLock(!locked)}
           />
         </View>
@@ -53,6 +53,6 @@ export const DeviceCard = React.memo<IDeviceCardProps>(
   (prevProps, nextProps) =>
     dequal(
       { ...prevProps, onChangeLock: false },
-      { ...nextProps, onChangeLock: false }
-    )
+      { ...nextProps, onChangeLock: false },
+    ),
 );

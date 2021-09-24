@@ -1,4 +1,4 @@
-import { IDevice, IFetchedDevice } from "@shared/interfaces/IDevice";
+import { IDevice, IFetchedDevice } from '@shared/interfaces/IDevice';
 
 //  It's used for camelCase code style rules
 //  and for translation into typed fields(boolean, enum) from strings values
@@ -24,7 +24,7 @@ export const extractFetchedDevice = ({
     powerSource: power_source,
     programmingCode: programming_code,
     serialNumber: serial_number,
-    state: state === "locked",
+    state: state === 'locked',
   },
   ...other,
 });

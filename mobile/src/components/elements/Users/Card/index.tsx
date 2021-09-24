@@ -1,15 +1,15 @@
-import React from "react";
-import { Card } from "@components/shared/Card";
-import { View, StyleSheet } from "react-native";
-import { SharedText } from "@components/shared/Text";
-import { dequal } from "dequal";
-import { styles } from "./styles";
-import { UserStatusBackground, UserStatusTitle } from "./options";
-import moment from "moment";
-import { EUserStatus } from "@shared/interfaces/IUser";
+import React from 'react';
+import { Card } from '@components/shared/Card';
+import { View, StyleSheet } from 'react-native';
+import { SharedText } from '@components/shared/Text';
+import { dequal } from 'dequal';
+import { styles } from './styles';
+import { UserStatusBackground, UserStatusTitle } from './options';
+import moment from 'moment';
+import { EUserStatus } from '@shared/interfaces/IUser';
 
 type TDateFormat = string | number;
-const formatDate = (date: TDateFormat) => moment(date).format("MMM DD hh:mm A");
+const formatDate = (date: TDateFormat) => moment(date).format('MMM DD hh:mm A');
 
 interface IUserCardProps {
   name: string;
@@ -23,7 +23,7 @@ interface IUserCardProps {
 
 export const UserCard = React.memo<IUserCardProps>(
   ({ name, contactInfo, period, status }) => {
-    const periodText = !!period
+    const periodText = period
       ? `${formatDate(period.start)} - ${formatDate(period.end)}`
       : undefined;
 
@@ -55,5 +55,5 @@ export const UserCard = React.memo<IUserCardProps>(
       </Card>
     );
   },
-  dequal
+  dequal,
 );

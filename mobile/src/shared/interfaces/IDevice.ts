@@ -1,4 +1,4 @@
-import { IBaseObject } from "./IBaseObject";
+import { IBaseObject } from './IBaseObject';
 
 export interface IFetchedDevice extends IBaseObject {
   attributes: {

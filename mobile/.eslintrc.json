@@ -1,10 +1,14 @@
 {
-  "parser": "babel-eslint",
-  "plugins": [
-    "react-hooks"
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react-hooks", "@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "no-console": "error",
+    "no-console": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   }

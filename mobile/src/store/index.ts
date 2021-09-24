@@ -3,9 +3,9 @@ import {
   combineReducers,
   createStore,
   Middleware,
-} from "redux";
-import axiosMiddleware from "./middlewares/axios";
-import * as Reducers from "./modules";
+} from 'redux';
+import axiosMiddleware from './middlewares/axios';
+import * as Reducers from './modules';
 
 const middlewares: Middleware[] = [axiosMiddleware];
 

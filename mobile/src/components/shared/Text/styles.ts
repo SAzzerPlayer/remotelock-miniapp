@@ -1,34 +1,34 @@
-import { StyleSheet, Platform } from "react-native";
-import { ColorTheme } from "@shared/ColorTheme";
-import { ESharedTextCategory, TSharedTextProp } from "./options";
+import { StyleSheet, Platform, TextStyle } from 'react-native';
+import { ColorTheme } from '@shared/ColorTheme';
+import { ESharedTextCategory, TSharedTextProp } from './options';
 
 export const styles = StyleSheet.create({
   text: {
-    fontFamily: "sans-serif",
+    fontFamily: 'sans-serif',
     color: ColorTheme.regular,
   },
 });
 
 const fontWeights = {
   bold: {
-    fontFamily: Platform.OS === "android" ? "sans-serif-medium" : undefined,
-    fontWeight: "700",
+    fontFamily: Platform.OS === 'android' ? 'sans-serif-medium' : undefined,
+    fontWeight: '700',
   },
   regular: {
-    fontFamily: Platform.OS === "android" ? "sans-serif" : undefined,
-    fontWeight: "500",
+    fontFamily: Platform.OS === 'android' ? 'sans-serif' : undefined,
+    fontWeight: '500',
   },
   light: {
-    fontFamily: Platform.OS === "android" ? "sans-serif-light" : undefined,
-    fontWeight: "300",
+    fontFamily: Platform.OS === 'android' ? 'sans-serif-light' : undefined,
+    fontWeight: '300',
   },
 };
 
 type TRequiredStyleProps =
-  | "fontSize"
-  | "lineHeight"
-  | "fontWeight"
-  | "fontFamily";
+  | 'fontSize'
+  | 'lineHeight'
+  | 'fontWeight'
+  | 'fontFamily';
 
 export const categoryStyles: Record<
   ESharedTextCategory,
@@ -61,7 +61,7 @@ export const categoryStyles: Record<
   },
 };
 
-export const getSharedTextStyle = (category: TSharedTextProp) => {
+export const getSharedTextStyle = (category: TSharedTextProp): TextStyle => {
   if (Object.keys(ESharedTextCategory).includes(category)) {
     return StyleSheet.flatten([styles.text, categoryStyles[category]]);
   }

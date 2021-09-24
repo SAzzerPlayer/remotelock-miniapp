@@ -1,7 +1,7 @@
-import React from "react";
-import { View, Image, ImageStyle } from "react-native";
-import { SharedText } from "@components/shared/Text";
-import { styles } from "./styles";
+import React from 'react';
+import { View, Image, ImageStyle } from 'react-native';
+import { SharedText } from '@components/shared/Text';
+import { styles } from './styles';
 
 interface ICardProps {
   title: string;
@@ -17,7 +17,7 @@ export const Card: React.FC<ICardProps> = ({
 }) => (
   <View style={styles.card}>
     <Image
-      source={require("@assets/kitten.jpg")}
+      source={require('@assets/kitten.jpg')}
       style={avatarStyle ? [styles.avatar, avatarStyle] : styles.avatar}
     />
     <View style={styles.content}>

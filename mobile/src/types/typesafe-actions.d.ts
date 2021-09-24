@@ -1,10 +1,8 @@
-import { ActionType } from "typesafe-actions";
+import { ActionType } from 'typesafe-actions';
 
-export type RootAction = ActionType<
-  typeof import("@store/rootAction").default
->;
+export type RootAction = ActionType<typeof import('@store/rootAction').default>;
 
-declare module "typesafe-actions" {
+declare module 'typesafe-actions' {
   interface Types {
     RootAction: RootAction;
   }

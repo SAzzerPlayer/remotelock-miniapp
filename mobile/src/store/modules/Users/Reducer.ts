@@ -1,8 +1,8 @@
-import { createReducer } from "typesafe-actions";
-import { EProcessState } from "@shared/EProcessState";
-import { UsersActions } from "./Actions";
-import { IUsersState } from "./IUsersState";
-import { extractFetchedUser } from "@shared/utils/extractFetchedUser";
+import { createReducer } from 'typesafe-actions';
+import { EProcessState } from '@shared/EProcessState';
+import { UsersActions } from './Actions';
+import { IUsersState } from './IUsersState';
+import { extractFetchedUser } from '@shared/utils/extractFetchedUser';
 
 const initialState: IUsersState = {
   users: [],
@@ -10,7 +10,7 @@ const initialState: IUsersState = {
 };
 
 export const UsersReducer = createReducer(initialState)
-  .handleAction(UsersActions.loadUsersAsync.request, (state) => ({
+  .handleAction(UsersActions.loadUsersAsync.request, state => ({
     ...state,
     processState: EProcessState.Loading,
   }))
@@ -22,7 +22,7 @@ export const UsersReducer = createReducer(initialState)
         ? EProcessState.Waiting
         : EProcessState.EmptyResponse,
   }))
-  .handleAction(UsersActions.loadUsersAsync.failure, (state) => ({
+  .handleAction(UsersActions.loadUsersAsync.failure, state => ({
     ...state,
     processState: EProcessState.Error,
   }))

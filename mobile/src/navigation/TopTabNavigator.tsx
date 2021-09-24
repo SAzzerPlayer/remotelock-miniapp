@@ -1,27 +1,26 @@
-import React from "react";
+import React from 'react';
 import {
   createBottomTabNavigator,
   BottomTabBarProps,
-} from "@react-navigation/bottom-tabs";
-import { Routes } from "./Routes";
-import { TopTabBar } from "./TopTabBar";
-import { ColorTheme } from "@shared/ColorTheme";
-import { DevicesScreen } from "@screens/Devices";
-import { UsersScreen } from "@screens/Users";
-import { getSmallerDimensionValue } from "@shared/utils/getSmallerDimensionValue";
-import { StyleSheet } from "react-native";
+} from '@react-navigation/bottom-tabs';
+import { Routes } from './Routes';
+import { TopTabBar } from './TopTabBar';
+import { DevicesScreen } from '@screens/Devices';
+import { UsersScreen } from '@screens/Users';
+import { getSmallerDimensionValue } from '@shared/utils/getSmallerDimensionValue';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   sceneContainer: {
     bottom: 0,
     width: getSmallerDimensionValue(),
-    alignSelf: "center",
+    alignSelf: 'center',
   },
 });
 
 const Tab = createBottomTabNavigator();
 
-export const TopTabNavigator = () => {
+export const TopTabNavigator: React.FC = () => {
   const [screenTopOffset, setScreenTopOffset] = React.useState(0);
 
   const tabBar = React.useCallback<(params: BottomTabBarProps) => JSX.Element>(
@@ -35,7 +34,7 @@ export const TopTabNavigator = () => {
         }) => setScreenTopOffset(height)}
       />
     ),
-    []
+    [],
   );
 
   const sceneContainerStyle = React.useMemo(
@@ -46,11 +45,11 @@ export const TopTabNavigator = () => {
           marginTop: screenTopOffset,
         },
       ]),
-    [screenTopOffset]
+    [screenTopOffset],
   );
   const screenOptions = React.useMemo(
     () => ({ headerShown: false, header: () => null }),
-    []
+    [],
   );
 
   return (

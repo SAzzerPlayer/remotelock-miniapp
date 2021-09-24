@@ -1,8 +1,8 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { useUsersSelector } from "@shared/selectors/useUsersSelector";
-import { UsersActions } from "@store/modules/Users/Actions";
-import { ProcessIndicator } from "@components/shared/ProcessIndicator";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useUsersSelector } from '@shared/selectors/useUsersSelector';
+import { UsersActions } from '@store/modules/Users/Actions';
+import { ProcessIndicator } from '@components/shared/ProcessIndicator';
 
 export const UsersLoader: React.FC = () => {
   const dispatch = useDispatch();
@@ -13,11 +13,11 @@ export const UsersLoader: React.FC = () => {
       dispatch(
         UsersActions.loadUsersAsync.request({
           request: {
-            url: "api/users",
+            url: 'api/users',
           },
-        })
+        }),
       ),
-    [dispatch]
+    [dispatch],
   );
   React.useEffect(() => {
     load();

@@ -1,7 +1,7 @@
-import React from "react";
-import { TouchableOpacity, ViewStyle } from "react-native";
-import { SharedText } from "@components/shared/Text";
-import { styles } from "./styles";
+import React from 'react';
+import { TouchableOpacity, ViewStyle } from 'react-native';
+import { SharedText } from '@components/shared/Text';
+import { styles } from './styles';
 
 interface IButtonProps {
   onPress: () => void;

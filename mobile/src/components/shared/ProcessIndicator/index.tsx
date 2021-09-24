@@ -1,9 +1,9 @@
-import React from "react";
-import { Animated, Pressable } from "react-native";
-import { EProcessState } from "@shared/EProcessState";
-import { SharedText } from "@components/shared/Text";
-import { styles } from "./styles";
-import { ProcessColor, ProcessMessage } from "./options";
+import React from 'react';
+import { Animated, Pressable, StyleSheet } from 'react-native';
+import { EProcessState } from '@shared/EProcessState';
+import { SharedText } from '@components/shared/Text';
+import { styles } from './styles';
+import { ProcessColor, ProcessMessage } from './options';
 
 interface IProcessIndicatorProps {
   state: EProcessState;
@@ -15,34 +15,37 @@ export const ProcessIndicator: React.FC<IProcessIndicatorProps> = ({
   onReloadPress,
 }) => {
   const isShown = state !== EProcessState.Waiting;
-  const opacityValue = Number(!!isShown);
-  const [opacity] = React.useState(new Animated.Value(opacityValue));
+  const [opacity] = React.useState(new Animated.Value(Number(!!isShown)));
 
   React.useEffect(() => {
     Animated.timing(opacity, {
-      toValue: opacityValue,
+      toValue: Number(!!isShown),
       duration: 150,
       delay: isShown ? 200 : 0,
       useNativeDriver: true,
     }).start();
-  }, [isShown, opacity, opacityValue]);
+  }, [isShown, opacity]);
 
-  return (
-    <Animated.View
-      style={[
+  const containerStyle = React.useMemo(
+    () =>
+      StyleSheet.flatten([
         styles.container,
         {
           backgroundColor: ProcessColor[state],
           opacity,
         },
-      ]}
-    >
+      ]),
+    [state, opacity],
+  );
+
+  return (
+    <Animated.View style={containerStyle}>
       <SharedText category="p1" style={styles.message}>
         {ProcessMessage[state]}
       </SharedText>
       {state === EProcessState.Error && !!onReloadPress && (
         <Pressable onPress={onReloadPress} style={styles.reloadButton}>
-          <SharedText category={"p1"} style={styles.reloadText}>
+          <SharedText category={'p1'} style={styles.reloadText}>
             Reload
           </SharedText>
         </Pressable>

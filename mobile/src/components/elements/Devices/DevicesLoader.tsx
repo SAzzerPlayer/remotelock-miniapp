@@ -1,8 +1,8 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { useDevicesSelector } from "@shared/selectors/useDevicesSelector";
-import { DevicesActions } from "@store/modules/Devices/Actions";
-import { ProcessIndicator } from "@components/shared/ProcessIndicator";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useDevicesSelector } from '@shared/selectors/useDevicesSelector';
+import { DevicesActions } from '@store/modules/Devices/Actions';
+import { ProcessIndicator } from '@components/shared/ProcessIndicator';
 
 export const DevicesLoader: React.FC = () => {
   const dispatch = useDispatch();
@@ -13,14 +13,14 @@ export const DevicesLoader: React.FC = () => {
       dispatch(
         DevicesActions.searchDevicesAsync.request({
           request: {
-            url: "api/devices",
+            url: 'api/devices',
             params: {
               name: query,
             },
           },
-        })
+        }),
       ),
-    [dispatch, query]
+    [dispatch, query],
   );
 
   React.useEffect(() => {

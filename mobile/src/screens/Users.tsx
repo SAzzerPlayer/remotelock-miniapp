@@ -1,8 +1,8 @@
-import React from "react";
-import { UsersList } from "@components/elements/Users/List";
-import { UsersLoader } from "@components/elements/Users/UsersLoader";
-import { Spacer } from "@components/shared/Spacer";
-import { AbsolutePosition } from "@components/shared/AbsolutePosition";
+import React from 'react';
+import { UsersList } from '@components/elements/Users/List';
+import { UsersLoader } from '@components/elements/Users/UsersLoader';
+import { Spacer } from '@components/shared/Spacer';
+import { AbsolutePosition } from '@components/shared/AbsolutePosition';
 
 const loaderTopOffset = 4;
 
