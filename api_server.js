@@ -21,7 +21,6 @@ http
   .createServer(function (req, res) {
     res.setHeader("Access-Control-Allow-Origin", "*");
     const reqURL = url.parse(req.url, true);
-
     const endpoint = endpoints[reqURL.pathname];
     if (endpoint) {
       res.writeHead(200, { "Content-Type": "applicaton/json" });
