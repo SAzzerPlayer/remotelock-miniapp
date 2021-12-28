@@ -1,3 +1,61 @@
+
+#The RemoteLock mini-app implementation
+To implement the RemoteLock mini-app project, it was decided to use other development tools and change the project structure:
+
+**1. JavaScript -> TypeScript.**
+
+_Why?_ For using static analyzing, autosuggest, types/interfaces, and for the ability to extend the project.
+
+**2. Redux store + Axios middleware.**
+
+_Why?_ Top-level global store to process and handle data in one specific place. This removes unnecessary logic from structural components and also it allows you to extend the project.
+
+**3. React navigation and top tabs.**
+
+_Why?_ To use a ready-made navigation module between screens.
+
+**4. Project structure.**
+
+_How?_ All working code is placed from the project root to the "src" folder. It isolates code from app life-required settings. And this allows you to use absolute paths in the correct way.
+
+**This folder has:**
+
+**a)** 'assets' folder - icons/images.
+
+**b)** 'components' folder - screen-related and shared components.
+
+**c)** 'navigation' folder - navigator components, routes, and TopTabBar UI component.
+
+**d)** 'screens' folder - top structural components, which are used in navigators.
+
+**e)** 'shared' folder - all functions, hooks, typings, interfaces, enums, etc, which are used in the whole app.
+
+**f)** 'store' folder - organized store in one place, which consists of Axios-middleware and sub-modules.
+
+**g)** 'App.tsx' - application entry point and top-level component, which consist of global context components and navigator.
+
+**5. Changed design of the screens and elements.**
+
+_Why?_ Firstly, it's allowed on demand. Secondly, I found some troubles in the UI and UX of mockups, it has:
+
+**a)** Contrasting black.
+
+**b)** Pale shades of red, yellow.
+
+**c)** Various shades of green in one place.
+
+**d)** Toggle in the middle required more time to tap than on the right side.
+
+**e)** For users, it would be necessary to simplify the mental model of the Block / Unblock action (than the graphic component Toggle). Toggle is more suitable for a large set of options, not mental models of locks. So I change the Toggle on named buttons, which has little visual response.
+
+**f)** Added loader status bar, for informing users about processes.
+
+______________________________________________
+_Demo:_
+
+![RemoteLock-mini-app](https://user-images.githubusercontent.com/42808354/133963816-ee28c29a-5d3b-43da-aff5-8010541002ac.gif)
+
+#//////////////////////////////////////////
 # Frontend Engineer Code Exercise
 
 # Terminology
